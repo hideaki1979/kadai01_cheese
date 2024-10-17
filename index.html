@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!-- 最初の設定は終わっています　必要な方は触ってください -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>チーズアカデミー</title>
+  <!-- Google Fonts指定はreset.cssよりも前に指定しないと適用されない -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<!-- 最初の設定は終わっています　必要な方は触ってください -->
+
+<body>
+  <!-- この中に記述していく -->
+  <!-- ここから下にコードを書く -->
+  <div class="wrap">
+    <header id="header">
+      <!-- この中に書いていく -->
+      <!-- ハンバーガーメニュ -->
+      <div class="hamburger_area">
+        <div class="hamburger">
+            <!-- ハンバーガーメニューの線 -->
+             <span></span>
+             <span></span>
+             <span></span>
+        </div>
+        <!-- ハンバーガーメニュー押下後のスライドメニュー -->
+        <!-- メニューはaタグを使用 -->
+        <ul class="slide_menu">
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#course">COURSE</a></li>
+            <li><a href="#news">NEWS</a></li>
+            <li><a href="#access">ACCESS</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </div>
+      
+      <!-- 課題用のスクールロゴ画像とナビ -->
+      <!-- ナビはaタグを使用。ロゴ画像とナビの並びはflexを使って横並び -->
+      <div class="tabmenu_animation">
+        <div class="tabmenu_area">
+            <img src="img/header_logo.png" alt="チーズアカデミーのロゴ">
+            <div class="header_link">
+              <a href="#about">ABOUT</a>
+              <a href="#course">COURSE</a>
+              <a href="#news">NEWS</a>
+              <a href="#access">ACCESS</a>
+              <a href="#contact">CONTACT</a>
+            </div>
+          </div>
+      </div>
+    </header>
+    <!-- /#header -->
+    <!-- メイン画像はbackground-imageを使ってタイトルを表示 -->
+    <div class="mainvisual">
+      <!-- この中に書いていく -->
+      <h1 class="maintitle_a">セカイを変えるチーズを作ろう</h1>
+      <h2 class="maintitle_b">チーズ職人養成学校「チーズアカデミーTOKYO」</h2>
+    </div>
+    <!-- /.mainvisual -->
+    <div class="content">
+       <!-- この中に書いていく -->
+       <!-- ABOUTの説明の行間はbrタグを使用（もっとスマートなやり方がある気がする・・・） -->
+       <div id="about">
+            <p class="entitle">ABOUT</p>
+            <p class="jatitle">チーズアカデミーについて</p>
+            <div class="honbun">
+                  <p>チーズアカデミーは、チーズ職人養成学校です。</p>
+                  <p>チーズの素晴らしさを、自給自足を通じて、できるだけ多くの人に知っていただきたい。<br><br>
+                  そして、食卓にはいつもチーズがあった、あの頃の当たり前をこの手で取り戻したい。</p>
+                  <p>そんな思いから、チーズ職人養成学校「チーズアカデミーTOKYO」は歩みを始めています。</p>
+                  <p>卒業後、チーズ自給自足のバックアップはもちろんのこと、<br><br>
+                  チーズ職人への就職・転職もサポートします。</p>
+            </div>
+            <!-- <p class="about_images">
+                <img src="img/about_images.png" alt="チーズ農場の複数写真">
+            </p> -->
+            <div class="scroll-infinity">
+                <div class="scroll-infinity__wrap">
+                  <ul class="scroll-infinity__list scroll-infinity__list--left">
+                    <li class="scroll-infinity__item"><img src="img/about_01.jpg" /></li>                        
+                    <li class="scroll-infinity__item"><img src="img/about_02.jpg" /></li>
+                    <li class="scroll-infinity__item"><img src="img/about_03.jpg" /></li>
+                    <li class="scroll-infinity__item"><img src="img/about_04.jpg" /></li>
+                    <li class="scroll-infinity__item"><img src="img/course_01.jpg" /></li>
+                    <li class="scroll-infinity__item"><img src="img/course_02.jpg" /></li>
+                    <li class="scroll-infinity__item"><img src="img/course_03.jpg" /></li>
+                  </ul>
+                  <ul class="scroll-infinity__list scroll-infinity__list--left">
+                    <li class="scroll-infinity__item"><img src="img/about_01.jpg" /></li>                        
+                    <li class="scroll-infinity__item"><img src="img/about_02.jpg" /></li>
+                    <li class="scroll-infinity__item"><img src="img/about_03.jpg" /></li>
+                    <li class="scroll-infinity__item"><img src="img/about_04.jpg" /></li>
+                    <li class="scroll-infinity__item"><img src="img/course_01.jpg" /></li>
+                    <li class="scroll-infinity__item"><img src="img/course_02.jpg" /></li>
+                    <li class="scroll-infinity__item"><img src="img/course_03.jpg" /></li>
+                  </ul>
+                </div>
+            </div>
+       </div>
+
+       <!-- COURSE -->
+       <div id="course">
+            <p class="entitle">COURSE</p>
+            <p class="jatitle">コースについて</p>
+            <div class="honbun">
+                <p>未経験からでもスタートができるよう、カリキュラムは多くの専門家や<br><br>
+                    現役チーズ職人のアドバイスのもと、作られました。</p>
+            </div>
+            <!-- 画像と説明はflexで横並び。
+             　　画像は可視領域内に入った時にスライドインっぽいアニメーションを使用 -->
+             <div class="course_boxes">
+                <div class="course_box">
+                    <div class="course_box_img">
+                        <img src="img/course_01.jpg" alt="">
+                    </div>
+                    <div class="course_box_text">
+                        <p class="course_text_title">本格的な農園を使った実地研修</p>
+                        <p class="course_text_honbun">チーズアカデミーでは、本格的な農園を使った実地研修を<br>
+                            行うことができます。プロとして活躍するチーズ職人も<br>
+                            使用するような、広大で環境も整った農園を余すところ<br>
+                            なく使い、卒業時には本格的なチーズを自分の力で作れる<br>
+                            実践力の養成を目指します。
+                        </p>
+                    </div>
+                </div>
+                <div class="course_box">
+                    <div class="course_box_text2">
+                        <div class="text2_inline">
+                            <p class="course_text_title2">必要な知識もしっかりと取得</p>
+                            <p class="course_text_honbun2">チーズ作りには、しっかりとした食に関する知識が<br>
+                                欠かせません。チーズアカデミーでは、一流講師陣による、<br>
+                                チーズ作りに必要ないろはを余すところなく学べます。<br>
+                                チーズそのものでなく、栄養学全般を学ぶことも<br>
+                                可能ですので、チーズ以外への展開も夢ではないでしょう。
+                            </p>
+                        </div>
+                        
+                    </div>
+                    <div class="course_box_img">
+                        <img src="img/course_02.jpg" alt="">
+                    </div>
+                </div>
+                <div class="course_box">
+                    <div class="course_box_img">
+                        <img src="img/course_03.jpg" alt="">
+                    </div>
+                    <div class="course_box_text">
+                        <p class="course_text_title">卒業制作はティスティング審査あり</p>
+                        <p class="course_text_honbun">チーズアカデミーでは最後の2ヶ月間で卒業制作を実施。<br>
+                            卒業制作として、チーズ作りを実際に行います。卒業後、<br>
+                            一般参加によるティスティング審査があるため、作り手の<br>
+                            目線だけでなく、消費者の目線から、卒業制作作品としての<br>
+                            チーズを、しっかりと評価いただくことができます。</p>
+                    </div>
+                </div>
+             </div>
+       </div>
+
+       <!-- NEWS -->
+       <div id="news">
+            <p class="entitle">NEWS</p>
+            <p class="jatitle">ニュース</p>
+            <!-- NEWSの画像の並びはflexを使用 -->
+            <div class="news_boxes">
+                <div class="news_box">
+                    <div class="news_box_picture"><img src="img/news_img.jpg" alt=""></div>
+                    <div class="news_box_description">
+                        <p class="cheesedate">2016/11/18</p>
+                        <p>チーズアカデミー卒業生のコスゲさんによる<br>
+                            チーズだけをふんだんに使用した話題のピザ屋<br>
+                            「Kosuge Pizza」が渋谷でオープンしました！
+                        </p>
+                    </div>
+                </div>
+                <div class="news_box">
+                    <div class="news_box_picture"><img src="img/news_img.jpg" alt=""></div>
+                    <div class="news_box_description">
+                        <p class="cheesedate">2016/11/18</p>
+                        <p>チーズアカデミー卒業生のコスゲさんによる<br>
+                            チーズだけをふんだんに使用した話題のピザ屋<br>
+                            「Kosuge Pizza」が渋谷でオープンしました！
+                        </p>
+                    </div>
+                </div>
+                <div class="news_box">
+                    <div class="news_box_picture"><img src="img/news_img.jpg" alt=""></div>
+                    <div class="news_box_description">
+                        <p class="cheesedate">2016/11/18</p>
+                        <p>チーズアカデミー卒業生のコスゲさんによる<br>
+                            チーズだけをふんだんに使用した話題のピザ屋<br>
+                            「Kosuge Pizza」が渋谷でオープンしました！
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- moreボタンはhoverでopacityを使って半透明化 -->
+            <div class="morenews">
+                <button type="button" class="news_more" value="more" 
+                onclick="location.href='https://www.google.co.jp/'">more</button>
+            </div>
+       </div>
+
+       <!-- ACCESS -->
+       <div id="access">
+            <p class="entitle">ACCESS</p>
+            <p class="jatitle">会社情報</p>
+            <!-- GoogleMapはiframeで埋め込み -->
+            <iframe class="accessmap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1620.6556502687954!2d139.7017094344435!3d35.66933613063013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c9fa9e2e881%3A0x35396adb5ba7ce03!2z44K444O844K644Ki44Kr44OH44Of44O85p2x5Lqs!5e0!3m2!1sja!2sjp!4v1728546610827!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="access_honbun">
+                <!-- 会社情報はtableタグを使ってレイアウトを整える -->
+                <table class="access_tbl">
+                    <tr>
+                        <th>学校名</th>
+                        <td>チーズアカデミーTOKYO</td>
+                    </tr>
+                    <tr>
+                        <th>事務所所在地</th>
+                        <td>〒107-0061東京都港区北青山3-5-6 青朋ビル2F</td>
+                    </tr>
+                    <tr>
+                        <th>TEL</th>
+                        <td>03-5413-5045</td>
+                    </tr>
+                    <tr>
+                        <th>FAX</th>
+                        <td>03-5413-5046</td>
+                    </tr>
+                    <tr>
+                        <th>MAIL</th>
+                        <td>dummy@cheeseacademy.tokyo</td>
+                    </tr>
+                </table>
+            </div>
+       </div>
+
+       <!-- CONTACT -->
+       <div id="contact">
+            <p class="entitle">CONTACT</p>
+            <p class="jatitle">説明会申し込み・お問い合わせ</p>
+            <div class="contact_honbun">
+                  <p class="contact_honbun_a">ぜひ1度、足を運んでみませんか。説明会は随時開催中。<br>
+                  その他、お問い合わせもお気軽にどうぞ。お待ちしております。</p>
+                  <p>※チーズアカデミーは実際には存在しません。<br>
+                  間違っても問い合わせしないようお願いいたします。</p>
+            </div>
+            <!-- 問い合わせフォームはtableタグを使ってレイアウトを整える -->
+            <form action="" class="contact_form">
+                <table class="contact_table">
+                    <tr>
+                        <th class="contact_item">名前</th>
+                        <td class="contact_body">
+                            <input type="text" name="myname" class="form_text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="contact_item">カナ</th>
+                        <td class="contact_body">
+                            <input type="text" name="mykana" class="form_text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="contact_item">メールアドレス</th>
+                        <td class="contact_body">
+                            <input type="email" name="mymail" class="form_text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="contact_item">
+                            <p>チーズアカデミーを</p>
+                            <p>知ったきっかけ</p>
+                        </th>
+                        <td class="contact_body">
+                            <select name="mychance" class="form_select">
+                                <option></option>
+                                <option>google選択</option>
+                                <option>SNS</option>
+                                <option>紹介</option>
+                                <option>たまたま通りかかった</option>
+                                <option>その他</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="contact_item">志望動機</th>
+                        <td class="contact_body">
+                            <label for="start_business" class="contact_motivation">
+                                <input type="checkbox" name="start_business">
+                                <span class="contact_motivation_txt">起業をしたい</span>
+                            </label>
+                            <label for="findwork" class="contact_motivation">
+                                <input type="checkbox" name="findwork">
+                                <span class="contact_motivation_txt">チーズ系企業に就職・転職したい</span>
+                            </label>
+                            <label for="makework" class="contact_motivation">
+                                <input type="checkbox" name="makework">
+                                <span class="contact_motivation_txt">チーズと関わる仕事をしており、仕事に生かしたい</span>
+                            </label>
+                            <label for="education" class="contact_motivation">
+                                <input type="checkbox" name="education">
+                                <span class="contact_motivation_txt">チーズの教養を身につけたい</span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="contact_item">詳細</th>
+                        <td class="contact_body">
+                           <textarea name="detail" class="form_textarea"></textarea>
+                        </td>
+                    </tr>
+                </table>
+                <input type="submit" value="送信" class="contact_submit" 
+                formaction="./contact_complete.html">
+            </form>
+       </div>
+    </div>
+    <!-- /.content -->
+    <div id="footer">
+      <!-- この中に書いていく -->
+      <p class="honbun">copyrights 2016 Cheeese Academy Tokyo All RIghts Reserved.</p>
+    </div>
+    <!-- /#footer -->
+  </div>
+  <!-- ここから上にコードを書く -->
+  <!-- この中に記述していく -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,584 @@
+/* ここから下に記載していく */
+/* 全体にborder-box(heightとwidthにpaddingとmarginを含む)指定をする。 */
+* {
+    box-sizing: border-box;
+}
+
+/* bodyは仕様書通り幅を1200pxにし、全体を中央揃えにするためにmarginを0 autoで指定
+   フォント字体はGoogle Fontsのフォントを使用
+   overflow-xはハンバーガーメニュー押下時にハンバーガーもスライドされてしまうため
+   その防止で設定が必要 */
+body {
+    width: 1200px;
+    margin: 0 auto;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    overflow-x: hidden;
+}
+
+/* aタグだと自動で下線が表示されるので、text-decorationをnone指定する */
+/* aタグだとハイパーリンク指定となり水色表示されるので、colorで色変更する */
+a {
+    text-decoration: none;
+    padding-left: 50px;
+    color: #222222;
+}
+
+/* ロゴとナビの並びをflex指定、ナビは水平方向に中央揃え */
+.tabmenu_area {
+    display: flex;
+    padding-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    align-items: center;
+    background-color: #ffd61a;
+}
+
+/* ハンバーガーメニューを右側に表示するためflex-endを指定 */
+.hamburger_area {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+/* ハンバーガーメニュー全体の幅と高さ、ポジションをfixedにしてスクロールしても固定表示させる */
+.hamburger {
+    width: 40px;
+    height: 25px;
+    position: fixed;
+    top: 25px;
+    z-index: 10;
+}
+
+/* ハンバーガーメニューの線 */
+.hamburger span {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: blue;
+}
+
+.hamburger span:first-of-type{/* ハンバーガーメニューの1番目の線 */
+    top: 0;
+}
+.hamburger span:nth-of-type(2){/* ハンバーガーメニューの2番目の線 */
+    top: 50%;
+}
+.hamburger span:last-of-type{/* ハンバーガーメニューの3番目の線 */
+    top: 100%;
+}
+
+/* スライドメニュー */
+/* 初期表示は隠れた状態にし、ハンバーガーメニューでスライド表示する */
+.slide_menu{
+    background-color: lightgray;
+    position: fixed;
+    top: 65px;
+    width: 100%;
+    left: 0;
+    transform: translateX(100%);
+    transition: .5s;
+    opacity: 0.8;
+    z-index: 5;
+}
+
+/* スライドメニュー項目用 */
+.slide_menu li{
+    color: #fff;
+    line-height: 400%;
+    text-align: center;
+}
+
+/* ハンバーガーメニュー押下後用。1・3番目の線をrotateで45度回転させ2番目を透明にし、×に変形する */
+.hamburger.active span:first-of-type{/* ハンバーガーメニューの1番目の線 */
+    top: 50%;
+    transform: rotate(45deg);
+}
+.hamburger.active span:nth-of-type(2){/* ハンバーガーメニューの2番目の線 */
+    opacity: 0;/* 透明にする */
+}
+.hamburger.active span:last-of-type{/* ハンバーガーメニューの3番目の線 */
+    top: 50%;
+    transform: rotate(-45deg);
+}
+
+/* スライドメニューを */
+.slide_menu.active{
+    transform: translateX(0);
+}
+
+/* メイン画像とメインタイトル backgroundをショートハンドにしてみた */
+.mainvisual {
+    /* background-image: url(../img/mainbg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; */
+    background: url(../img/mainbg.png) no-repeat center / cover;
+    /* 画像が一部表示されない事象があり原因はheightを500pxに指定していたから */
+    /* 440pxに調整したところ全体表示された */
+    height: 440px;
+    color: white;
+    text-align: center;
+    padding-top: 180px;
+    margin-bottom: 60px;
+    border: 2px solid #cacaca;
+    border-radius: 30px;
+}
+
+.maintitle_a, .maintitle_b {
+    animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+/* セカイを変えるチーズを作ろう */
+.maintitle_a {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+/* チーズ職人養成学校「チーズアカデミーTOKYO」 */
+.maintitle_b {
+    font-size: 32px;
+}
+
+/* 英語タイトル用共通クラス */
+.entitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #ffd61a;
+}
+
+/* 日本語タイトル用共通クラス */
+.jatitle {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 60px;
+    color: #222222;
+}
+
+/* 本文用共通クラス */
+.honbun {
+    font-size: 16px;
+    text-align: center;
+}
+
+.honbun p {
+    margin-bottom: 60px;
+}
+
+/* ABOUT用の画像 */
+.scroll-infinity {
+    margin-bottom: 60px;
+}
+
+/* ABOUT用画像を無限横スクロール（左方向に） */
+@keyframes infinity-scroll-left {
+    from {
+      transform: translateX(0);
+    }
+      to {
+      transform: translateX(-100%);
+    }
+}
+.scroll-infinity__wrap {
+    display: flex;
+    overflow: hidden;
+}
+.scroll-infinity__list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+.scroll-infinity__list--left {
+    animation: infinity-scroll-left 40s infinite linear 0.5s both;
+}
+.scroll-infinity__item {
+    width: calc(100vw / 4);
+    margin-left: 5px;
+}
+.scroll-infinity__item>img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.scroll-infinity__wrap:hover .scroll-infinity__list--left{
+    animation-play-state: paused;
+  }
+
+/* COURSEの画像と説明全体 */
+.course_boxes {
+    margin-bottom: 60px;
+}
+
+/* COURSEの画像と本文をflexとrowで */
+.course_box {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #fafafa;
+    
+}
+
+/* 一番目・三番目の本文全体 */
+.course_box_text {
+    width: 50%;
+    padding-left: 50px;
+}
+
+/* 一番目・三番目の本文タイトル */
+.course_text_title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    padding-top: 90px;
+}
+
+/* 一番目・三番目の本文 */
+.course_text_honbun {
+    font-size: 16px;
+    line-height: 2em;
+}
+
+/* 二番目の本文全体 */
+/* ２番目は画像と本文逆なので、全体部に右寄せ */
+.course_box_text2 {
+    text-align: right;
+    width: 50%;
+    padding-top: 90px;
+    padding-right: 50px;
+}
+
+/* ２番目のinline部 */
+/* テキスト全体部は右寄せにするが、テキスト自体は左揃えとなっているので、 */
+/* inline-blockを使ってタイトルと本文の幅を合わせてtext-alignをleftで左揃え */
+.text2_inline {
+    display: inline-block;
+    text-align: left;
+}
+
+/* ２番目の本文タイトル */
+p.course_text_title2 {
+    margin-bottom: 40px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ２番目の本文 */
+.course_text_honbun2 {
+    font-size: 16px;
+    line-height: 2em;
+}
+
+/* COURSEのイメージ部 */
+/* opacityを0にして透明にしておくとアニメーション実施時に1にすると */
+/* スライドインする際にかっこよく見える */
+.course_box_img {
+    width: 50%;
+    opacity: 0;
+}
+
+/* cubic-zezierはアニメーションのイージング速度（勉強中） */
+/* 本クラスはスクロール内に入ったらJSでクラス追加される */
+/* またスクロール外でクラスが削除される */
+/* overflowにhiddenを設定しないと１・３番目画像表示後に本文が消える。。。 */
+.course_box_img-animation {
+    animation: img-opacity 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 画像自体を幅と高さを100%とautoで枠いっぱいに */
+.course_box_img img {
+    width: 100%;
+    height: auto;
+}
+
+/* スライドIN実施前の設定値。まだ理解が進んでいない・・・ */
+.course_box_img-animation::before {
+    animation: course_box_img 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    background: #fff;
+    content: '';
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+}
+
+/* アニメーション実施に透明化を解除 */
+@keyframes img-opacity {
+    100% {
+      opacity: 1;
+    }
+}
+
+/* アニメーション実施時に右横方向に画像をスライドIN */
+@keyframes course_box_img {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* .box:nth-child(even) {
+flex-direction: row-reverse;
+}
+.box:nth-child(even) .text {
+text-align: right;
+}
+.box:nth-child(even) .pict {
+margin-left: 0;
+margin-right: 3%;
+} */
+
+/* NEWSの画像とテキスト全体部 */
+.news_boxes {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+/* NEWSの各画像とテキスト部 */
+.news_box {
+    width: 300px;
+    height: 350px;
+    border: 1px solid lightgray;
+}
+
+/* 2番目で左右余白設定 */
+.news_box:nth-child(2) {
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.news_box_picture img {
+    width: 100%;
+    height: 200px;
+}
+
+/* NEWSテキスト部 */
+.news_box_description {
+    width: 100%;
+    padding-right: 12px;
+    padding-left: 12px;
+    line-height: 1.2em;
+}
+
+/* NEWSテキスト部の説明部分 */
+.news_box_description p {
+    font-size: 12px;
+    color: dimgray;
+}
+
+/* NEWSテキスト部の日付部分 */
+.cheesedate {
+    padding: 20px 0 14px 0;
+}
+
+/* NEWSのmoreボタン */
+.news_more {
+    width: 250px; /* 横幅指定 */
+    background-color: burlywood; /* 背景色 */
+    color: #333; /* 文字色 */
+    font-weight: bold; /* 文字の太さ */
+    display: block; /* インライン要素をブロック要素に変更 */
+    margin: 0 auto; /* 中央寄せ */
+    font-size: 16px; /* 文字の大きさ */
+    padding: 15px; /* 内側の余白 */
+    border-radius: 50px; /* 角丸指定 */
+    border: none;
+    cursor: pointer;
+  }
+
+/* NEWSのmoreボタンのhoverアクション */
+.news_more:hover {
+    opacity: 0.7;
+  }
+
+/* ACCESS全体部 */
+div#access {
+    margin-top: 60px;
+}
+
+/* ACCESSのGoogle Map */
+.accessmap {
+    /* iframeタグはインライン要素のため、marginが効かない。
+       displayでblock指定するとmarginが適用される */
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+}
+
+
+/* アクセスの会社情報 */
+.access_honbun {
+    background: #fafafa;
+    text-align: center;
+    font-size: 16px;
+    padding-top: 60px;
+    padding-bottom: 30px;
+}
+
+.access_honbun p {
+    height: 20px;
+    margin-bottom: 30px;
+}
+
+.access_tbl {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.access_tbl th,
+.access_tbl td {
+border: 1px solid #ccc;
+padding: 20px;
+}
+
+.access_tbl th {
+    font-weight: bold;
+    background-color: #dedede; 
+    }
+
+#contact {
+  margin-top: 60px;
+}
+
+.contact_honbun {
+    text-align: center;
+    margin-bottom: 70px;
+    line-height: 1.5em;
+}
+
+/* 是非～のテキストと※チーズアカデミー～の間に余白設定 */
+.contact_honbun_a {
+    margin-bottom: 30px;
+}
+
+/* 問い合わせフォーム部 */
+.contact_form {
+    width: 700px;
+    margin: 0 auto;
+}
+
+/* 問い合わせフォームTABLE部 */
+.contact_table {
+    /* display: table; */
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/* 問い合わせフォーム各項目・入力部 */
+.contact_item,
+.contact_body {
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+/* 問い合わせフォーム各項目名 */
+/* 「志望動機」「詳細」の縦の表示が中央からズレていたので */
+/* vertical-alignをmiddleで中央揃えが出来ました */
+.contact_item {
+  text-align: left; /* テキスト左寄せ */
+  vertical-align: middle;
+  width: 30%; /* 横幅30%指定（グレーの背景色部分） */
+  background-color: #eee; /* グレーの背景色 */
+  font-weight: bold;
+}
+
+/* 問い合わせフォーム各入力部 */
+.contact_body {
+  width: 70%; /* 横幅70%指定（白背景色部分） */
+}
+
+/* 入力部のテキストボックス */
+.form_text {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    max-width: 300px;
+  }
+
+/* 入力部のプルダウン */
+.form_select {
+    width: 180px;
+    height: 40px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* 入力部チェックボックスのテキスト部 */
+/* spanがインライン要素のためdisplay: blockでcss適用をする */
+.contact_motivation {
+    display: block;
+}
+
+/* 入力部チェックボックスの2番目以降のテキスト部 */
+.contact_motivation + .contact_motivation {
+margin-top: 10px;
+}
+
+/* 入力部チェックボックスの全テキスト部 */
+.contact_motivation_txt {
+margin-left: 5px;
+}
+
+/* 問い合わせフォームテキストエリア */
+.form_textarea {
+    width: 100%;
+    padding: 10px;
+    height: 200px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* 送信ボタン */
+.contact_submit {
+  width: 250px; /* 横幅指定 */
+  background-color: #333; /* 背景色 */
+  color: #fff; /* 文字色 */
+  font-weight: bold; /* 文字の太さ */
+  display: block; /* インライン要素をブロック要素に変更 */
+  margin: 0 auto; /* 中央寄せ */
+  font-size: 16px; /* 文字の大きさ */
+  padding: 15px; /* 内側の余白 */
+  border-radius: 100vh; /* 角丸指定 */
+  border: none;
+  cursor: pointer;
+}
+
+/* 送信ボタンのホバーアクション */
+.contact_submit:hover {
+  background: burlywood;
+  color: #333;
+}
+
+/* フッター部 */
+#footer {
+    background-color: #707070;
+    padding: 30px 0;
+    color: #cacaca;
+    margin-top: 100px;
+}
+
+.contact_complete {
+    font-size: 40px;
+    text-align: center;
+    
+    color: red;
+}
